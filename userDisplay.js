@@ -93,6 +93,12 @@ for(let i=0;i<updatebtnArray.length;i++)
       // alert ("click update button to save changes");
       let localStoreArray= getLocalStorageDetails();
       localStoreArray[i]=uservaluesArray;
+      localStoreArray.sort(function(a,b)
+      {
+        if(a.name.toLowerCase()<b.name.toLowerCase()) return -1;
+        if(a.name.toLowerCase()>b.name.toLowerCase()) return 1;
+        return 0;
+      })
       localStorage.setItem('userDetails',JSON.stringify(localStoreArray));
       parent.querySelector('#editbtn').style.visibility="visible";
       parent.querySelector('#updatebtn').style.visibility="hidden";
@@ -106,7 +112,7 @@ for(let i=0;i<updatebtnArray.length;i++)
         inputArray[j].disabled=true;
         inputArray[j].style.border="none";
      }
-
+     window.location.reload();
    }
    else
    {
