@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<head>
+ <title> Form Registration</title>
+ <link rel="stylesheet" href="form.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="https://kit.fontawesome.com/82da19c140.js" crossorigin="anonymous"></script>
+ 
+  
+ </head>
+
+ <body>
+ <div class="container">
+ 	<h1 align="center" class="formTitle">
+ 		Registration Form
+ 	</h1>
+   <form name="userform"  method="GET" id="userform"   action="userData.html" onsubmit=" return validationForm()" class="form" autocomplete="">
+           <table align="center" cellpadding="10">
+           <tr class="form-field success">
+                <td align="right">User id: </td>
+                <td> <input type="text" name="user-id"  id="user-id" placeholder="must be of length 5 to 20" ><br>
+                <small class="validationText"></small></td>
+                <td class="compulsoryData">* Required</td>
+           </tr>
+           <tr class="form-field success">
+	            <td align="right">Password:</td>
+                <td> <input type="Password" name="password" placeholder=" must be of length 7 to 12" id="password" ><br>
+                <small class="validationText"></small></td>
+                <td class="compulsoryData">* Required</td>
+          </tr>
+          <tr class="form-field success">
+                <td align="right">Name: </td>
+                <td> <input type="text" name="fname" class="fname" placeholder=" alphabets only" ><br>
+                <small class="validationText"></small></td>
+                <td class="compulsoryData">* Required</td>
+
+          </tr>
+          <tr class="form-field success">
+               <td align="right">Address: </td>
+               <td> <input type="text" name="address" id="address"placeholder="optional"></td>
+
+          </tr> 
+          <tr class="form-field success">
+            	<td align="right"> Country</td>
+            	<td >
+                  
+                        <select  id="country" name="countryName" class="country" >
+                        <option  value="" >(select a country)</option>
+                        <option value="India">India</option>
+                        <option value="US">Us</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Russia">Russia</option>
+                        </select><br>
+                       <small class="validationText"></small>
+                  
+                  </td>
+                        
+               <td class="compulsoryData">* Required</td>
+
+          </tr>  
+ 
+          <tr class="form-field success">
+	           <td align="right"> ZIP code: </td>
+               <td> <input type="text" id="zipcode" name="zipcode" placeholder="Must be numeric only" ><br>
+               <small class="validationText"></small></td>
+               <td class="compulsoryData" id="zipCodeValid">* Required</td>
+         </tr>
+
+          <tr class="form-field success">
+	            <td align="right"> E-mail </td>
+                <td> <input type="text" id="email" name="email" placeholder=" Must be a valid email"><br>
+                  <small class="validationText"></small>
+
+                </td>
+                <td class="compulsoryData">* Required</td>
+                
+          </tr>
+          <tr class="form-field success">
+	            <td align="right">Gender</td>
+	            <td> <input type="radio" name="status" value="male">Male</td>
+	            <td><input type="radio" name="status" value="female">Female</td>
+	            <td><input type="radio" name="status" value="other">Other</td>
+         </tr>
+         <tr class="form-field success">
+	            <td align="right" >Language: 
+                       
+              </td>
+                <td> <input type="checkbox" name="checkbox1" id="checkbox" value="English">English</td>
+                <td><input type="checkbox" name="checkbox2" id="checkbox" value="Non English">Non English
+                </td>
+                <!-- <small class="validationText"></small> -->
+                <td class="compulsoryData" id="checking">* Required</td>
+                
+         </tr>
+
+         <tr class="form-field">
+	            <td align="right"> About:</td>
+                <td><textarea rows="4" cols="50">Optional</textarea></td>
+	
+         </tr>
+         
+      </table>
+  <div class="sub_div">
+    <table align="center">
+        <tr class="form-field">
+	        <td >
+		          <input type="submit" id="submitbtn" name="submitbtn" placeholder="Submit">
+	
+	        </td>
+        </tr>
+     </table>
+  </div>
+</form>
+</div>
+<script src="form.js"></script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+ 
+

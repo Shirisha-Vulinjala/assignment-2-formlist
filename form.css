@@ -1,1 +1,37 @@
+.formTitle{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: darkblue;
+    color:white;
 
+}
+.container{
+    background: ghostwhite;
+}
+ 		
+ 	.sub_div
+ 	{
+ 		
+ 		height: 30px;
+ 		width:100%;
+ 	}
+
+ .compulsoryData{
+     color: red;
+ }  
+ .validationText{
+     color: red;
+ } 
+
+ .c2{
+     padding-top: 20px;
+     float: left;
+
+
+ }
+ .bord1{
+     border:none;
+ }
+ 
+    

@@ -1,1 +1,15 @@
+tr:nth-child(even){
+    background-color:seashell;
+}
+
+.container{
+    background-color: whitesmoke;
+}
+
+ th{
+    background-color:sandybrown;
+} 
+.bord1{
+    border:none;
+}
 
