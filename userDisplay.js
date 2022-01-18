@@ -93,12 +93,6 @@ for(let i=0;i<updatebtnArray.length;i++)
       // alert ("click update button to save changes");
       let localStoreArray= getLocalStorageDetails();
       localStoreArray[i]=uservaluesArray;
-      localStoreArray.sort(function(a,b)
-      {
-        if(a.name.toLowerCase()<b.name.toLowerCase()) return -1;
-        if(a.name.toLowerCase()>b.name.toLowerCase()) return 1;
-        return 0;
-      })
       localStorage.setItem('userDetails',JSON.stringify(localStoreArray));
       parent.querySelector('#editbtn').style.visibility="visible";
       parent.querySelector('#updatebtn').style.visibility="hidden";
@@ -117,23 +111,21 @@ for(let i=0;i<updatebtnArray.length;i++)
    else
    {
       alert ("check all the fields")
-   }
-   
-   
-})
+   }  
+   })
 }
- 
+
 for(let i=0;i<cancelbtnArray.length;i++)
 {
    cancelbtnArray[i].addEventListener('click',function ()
    {
       let parent=cancelbtnArray[i].parentElement.parentElement;
-   parent.querySelector('#editbtn').style.visibility="visible";
-   parent.querySelector('#updatebtn').style.visibility="hidden";
-   parent.querySelector('.deletebtn').style.visibility="visible";
-   parent.querySelector('.cancelbtn').style.visibility="hidden"; 
-   let inputList=  parent.querySelectorAll("#user-id,.fname,#email,#zipcode,#country");
-    let inputArray= Array.from(inputList);
+      parent.querySelector('#editbtn').style.visibility="visible";
+      parent.querySelector('#updatebtn').style.visibility="hidden";
+      parent.querySelector('.deletebtn').style.visibility="visible";
+      parent.querySelector('.cancelbtn').style.visibility="hidden"; 
+      let inputList=  parent.querySelectorAll("#user-id,.fname,#email,#zipcode,#country");
+      let inputArray= Array.from(inputList);
      for(let j=0;j<inputArray.length;j++)
      {
         inputArray[j].disabled=true;
@@ -223,7 +215,87 @@ function changesValidation(parentEle)
          }
 
    }
+   //Sorting based on numbers for zipcode
 
+   let sortByZip=document.getElementById('sortByZip');
+   sortByZip.addEventListener('click',function ()
+   {
+      let localStoreDetails= getLocalStorageDetails();
+        localStoreDetails.sort(function (a,b)
+        {
+           return a.zip-b.zip;
+        })
+        localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
+        window.location.reload();
+   })
+   // sorting based on username
+   let sortByName=document.getElementById('sortByName')
+   sortByName.addEventListener('click',function ()
+    {
+      let localStoreDetails= getLocalStorageDetails();
+      localStoreDetails.sort(function (a,b)
+      {
+         if(a.name<b.name) return -1;
+         if(a.name>b.name) return 1;
+         else
+         return 0;
+   
+      })
+      localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
+      window.location.reload();
+       
+    })
+    // sorting based on userid
+    let sortById=document.getElementById('sortById');
+    sortById.addEventListener('click',function ()
+    {
+      let localStoreDetails= getLocalStorageDetails();
+      localStoreDetails.sort(function (a,b)
+      {
+         if(a.id<b.id) return -1;
+         if(a.id>b.id) return 1;
+         else
+         return 0;
+   
+      })
+      localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
+      window.location.reload();
+       
+    });
+    //sorting based on country of user
+    let sortByCountry=document.getElementById('sortByCountry');
+    sortByCountry.addEventListener('click',function ()
+    {
+      let localStoreDetails= getLocalStorageDetails();
+      localStoreDetails.sort(function (a,b)
+      {
+         if(a.country<b.country) return -1;
+         if(a.country>b.country) return 1;
+         else
+         return 0;
+   
+      })
+      localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
+      window.location.reload();
+    })
+   // sorting based on email of user
+   let sortByEmail=document.getElementById('sortEmail');
+   sortByEmail.addEventListener('click',function ()
+   {
+      let localStoreDetails= getLocalStorageDetails();
+      localStoreDetails.sort(function (a,b)
+      {
+         if(a.email<b.email) return -1;
+         if(a.email>b.email) return 1;
+         else
+         return 0;
+   
+      })
+      localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
+      window.location.reload();
+   })
+   
+     
 
   
  

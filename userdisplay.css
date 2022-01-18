@@ -6,9 +6,15 @@ tr:nth-child(even){
     background-color: whitesmoke;
 }
 
- th{
+th button{
     background-color:sandybrown;
 } 
+th {
+    background-color:sandybrown;
+} 
+th button {
+    border:none;
+}
 .bord1{
     border:none;
 }
