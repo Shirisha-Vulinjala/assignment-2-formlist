@@ -1,4 +1,4 @@
-
+function griddisplay(){
 let gridDisplay=JSON.parse(localStorage.getItem("userDetails"));
 console.log(gridDisplay);
   
@@ -114,7 +114,7 @@ for(let i=0;i<updatebtnArray.length;i++)
    }  
    })
 }
-
+// adding event listener for cancel button
 for(let i=0;i<cancelbtnArray.length;i++)
 {
    cancelbtnArray[i].addEventListener('click',function ()
@@ -126,11 +126,19 @@ for(let i=0;i<cancelbtnArray.length;i++)
       parent.querySelector('.cancelbtn').style.visibility="hidden"; 
       let inputList=  parent.querySelectorAll("#user-id,.fname,#email,#zipcode,#country");
       let inputArray= Array.from(inputList);
+   
+     let userdetails=getLocalStorageDetails();
+     let userArray=userdetails[i];
+     parent.querySelector('#user-id').value=userArray.id;
+     parent.querySelector('.fname').value=userArray.name;
+     parent.querySelector('#email').value=userArray.email;
+     parent.querySelector('#zipcode').value=userArray.zip;
+     parent.querySelector('#country').value=userArray.country;
      for(let j=0;j<inputArray.length;j++)
      {
         inputArray[j].disabled=true;
+        inputArray[j].style.border="none";
      }
-     window.location.reload();
    })
 }
 // adding functionality to delete button
@@ -143,11 +151,10 @@ for(let i=0;i<cancelbtnArray.length;i++)
      let localStoreDetails=  getLocalStorageDetails();
      localStoreDetails.splice(i,1);
      localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-     parent.remove(); 
-     window.location.reload();
+     griddisplay();
      })
  }
-
+}
  function   getLocalStorageDetails()
 {
    return localStorage.getItem('userDetails')==null?[]:JSON.parse(localStorage.getItem('userDetails'));
@@ -226,7 +233,7 @@ function changesValidation(parentEle)
            return a.zip-b.zip;
         })
         localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-        window.location.reload();
+        griddisplay();
    })
    // sorting based on username
    let sortByName=document.getElementById('sortByName')
@@ -242,7 +249,7 @@ function changesValidation(parentEle)
    
       })
       localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-      window.location.reload();
+      griddisplay();
        
     })
     // sorting based on userid
@@ -259,7 +266,7 @@ function changesValidation(parentEle)
    
       })
       localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-      window.location.reload();
+      griddisplay();
        
     });
     //sorting based on country of user
@@ -276,7 +283,7 @@ function changesValidation(parentEle)
    
       })
       localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-      window.location.reload();
+      griddisplay();
     })
    // sorting based on email of user
    let sortByEmail=document.getElementById('sortEmail');
@@ -292,8 +299,10 @@ function changesValidation(parentEle)
    
       })
       localStorage.setItem('userDetails',JSON.stringify(localStoreDetails));
-      window.location.reload();
+      griddisplay()
    })
+
+   griddisplay();
    
      
 
