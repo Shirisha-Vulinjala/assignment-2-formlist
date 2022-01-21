@@ -22,7 +22,8 @@
    <div class="c2">
        <table>
            <tr>
-               <button type="button"  onclick="window.location.href='userform.html'">+ Add New Record</button>
+            <td ><button type="button"  onclick="window.location.href='userform.html'">+ Add New Record</button></td>
+            <td > <input type="text" placeholder="Search.." id="searchText"><span><button type="button" class="btn-info searchBtn"><i class="fas fa-search"></i></button></span></td>
            </tr>
        </table>
    </div>
@@ -33,21 +34,23 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col" class="usersId" ><button id="sortById" >UserID</button></th>
-            <th scope="col" class="usersName"><button id="sortByName">UserName</button></th>
-            <th scope="col" class="usersMail"><button id="sortEmail">EmailId</button></th>
-            <th scope="col" class="usersZip"><button id="sortByZip">ZipCode</button></th>
-            <th scope="col" class="usersCountry"><button id="sortByCountry">Country</button></th>
-            <th scope="col"  class="edit"></th>
-            <th scope="col" class="delete"></th>
+            <th scope="col" class="usersId " ><button id="sortById" >UserID<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col" class="usersName "><button id="sortByName">UserName<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col" class="usersMail "><button id="sortEmail">EmailId<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col" class="usersZip "><button id="sortByZip">ZipCode<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col" class="usersCountry"><button id="sortByCountry">Country<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col" class="UsersLanguages"><button id="sortByLang">Language<i class="fa fa-fw fa-sort"></i></button></th>
+            <th scope="col"  class="edit "></th>
+            <th scope="col" class="delete "></th>
           </tr>
         </thead>
         <tbody class="tablebody">
            
 
          </tbody>
-         </table>
+  </table>
    <script src="userDisplay.js"></script>
+   
     
 </body>
 </html>

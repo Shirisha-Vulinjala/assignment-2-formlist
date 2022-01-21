@@ -10,7 +10,7 @@
     background: ghostwhite;
 }
  		
- 	.sub_div
+.sub_div
  	{
  		
  		height: 30px;
@@ -33,5 +33,16 @@
  .bord1{
      border:none;
  }
- 
+ input[type="radio"]
+ {
+    margin: 0 10px 0 10px;
+  }
+  input[type="checkbox"]
+  {
+    margin: 0 10px 0 10px;
+  }
+
+small{
+    visibility: hidden;
+} 
     

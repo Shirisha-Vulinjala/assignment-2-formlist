@@ -1,12 +1,14 @@
 tr:nth-child(even){
     background-color:seashell;
+    
+    
 }
 
 .container{
     background-color: whitesmoke;
 }
 
-th button{
+ th button{
     background-color:sandybrown;
 } 
 th {
@@ -17,5 +19,13 @@ th button {
 }
 .bord1{
     border:none;
+}
+.editlang{
+    position:absolute;
+    
+   
+}
+table{
+    width:100%
 }
 
