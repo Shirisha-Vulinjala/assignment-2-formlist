@@ -462,7 +462,7 @@ function griddisplay(){
    let userDetails= getLocalStorageDetails();
    let userDetails1=userDetails;
    let valid;
-   searchBtn.addEventListener('click',function ()
+  searchBtn.addEventListener('click',function ()
    {
      
       let searchValue=document.querySelector('#searchText').value;
@@ -470,6 +470,7 @@ function griddisplay(){
       console.log(searchValueLower);
      
       let searchArray=[];
+      // console.log(searchArray.length)
       if(searchValueLower.trim()!="")
       {
          userDetails.forEach(user=>
@@ -498,11 +499,11 @@ function griddisplay(){
    
       }
      
-      else{
+   else{
          localStorage.setItem('userDetails',JSON.stringify(userDetails1));
          griddisplay();
    
-      }
+     }
       
       })
    
